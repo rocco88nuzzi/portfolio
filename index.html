@@ -1,0 +1,1452 @@
++<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio personale per studente ITS orientato ai sistemi industriali, automazione, PLC e manutenzione avanzata.">
+  <title>Portfolio | Tecnico avanzato di sistemi industriali</title>
+  <link rel="canonical" href="https://tuodominio.example/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#ee7c22">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portfolio | Tecnico avanzato di sistemi industriali - Rocco Nuzzi">
+  <meta property="og:description" content="Portfolio personale: PLC, automazione industriale, manutenzione e progetti ITS.">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Rocco Nuzzi">
+  <meta property="og:image" content="https://tuodominio.example/https://github.com/rocco88nuzzi/prova/blob/main/foto-profilo.png?raw=true">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio | Rocco Nuzzi">
+  <meta name="twitter:description" content="PLC, automazione industriale e manutenzione - portfolio ITS.">
+  <meta name="twitter:image" content="https://tuodominio.example/https://github.com/rocco88nuzzi/prova/blob/main/foto-profilo.png?raw=true">
+
+  <link rel="preconnect" href="https://unpkg.com">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Structured data (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rocco Nuzzi",
+    "jobTitle": "Tecnico avanzato di sistemi industriali",
+    "url": "https://tuodominio.example/",
+    "sameAs": [
+      "https://www.linkedin.com/in/rocco-nuzzi",
+      "https://github.com/"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f7f8;
+      --surface: #ffffff;
+      --surface-strong: #edf2f4;
+      --ink: #15191d;
+      --muted: #5b6770;
+      --line: #d9e1e6;
+      --steel: #27566b;
+      --steel-deep: #16323e;
+      --blue: #2c6fb3;
+      --green: #247a59;
+      --orange: #ee7c22;
+      --red: #bf3f35;
+      --shadow: 0 18px 48px rgba(21, 25, 29, 0.13);
+      --radius: 8px;
+      --header-height: 72px;
+    }
+
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #101315;
+      --surface: #181d20;
+      --surface-strong: #20272b;
+      --ink: #f3f7f9;
+      --muted: #b7c3c9;
+      --line: #2d383e;
+      --steel: #66a9bf;
+      --steel-deep: #dceff5;
+      --blue: #7eb6ed;
+      --green: #72d6a9;
+      --orange: #ffac5c;
+      --red: #ef8178;
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    body.nav-open { overflow: hidden; }
+
+    img { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, input, textarea { font: inherit; }
+
+    button { border: 0; cursor: pointer; }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -4rem;
+      z-index: 100;
+      padding: 0.75rem 1rem;
+      background: var(--orange);
+      color: #111;
+      border-radius: var(--radius);
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .section-shell {
+      width: 100%;
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1.25rem;
+      height: var(--header-height);
+      padding: 0 2rem;
+      color: #fff;
+      transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+    .site-header.is-scrolled,
+    body.nav-open .site-header {
+      background: color-mix(in srgb, var(--surface) 92%, transparent);
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 0;
+      font-weight: 800;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border: 2px solid currentColor;
+      border-radius: 8px;
+      color: inherit;
+      font-size: 0.88rem;
+    }
+    .brand-name { white-space: nowrap; }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-left: auto;
+    }
+    .site-nav a {
+      padding: 0.55rem 0.75rem;
+      border-radius: 999px;
+      color: currentColor;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .site-nav a.is-active,
+    .site-nav a:hover {
+      background: color-mix(in srgb, var(--orange) 20%, transparent);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 0 0 auto;
+    }
+
+    .icon-button {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border-radius: 8px;
+      background: color-mix(in srgb, currentColor 13%, transparent);
+      color: inherit;
+    }
+
+    .icon-button svg,
+    .button svg,
+    .skill-card svg,
+    .project-topline svg,
+    .contact-links svg,
+    .site-footer svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      stroke-width: 2.2;
+    }
+
+    .nav-toggle { display: none; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 86svh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        linear-gradient(90deg, rgba(8,13,16,0.86) 0%, rgba(8,13,16,0.62) 46%, rgba(8,13,16,0.24) 100%),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80") center / cover no-repeat;
+      color: #fff;
+      padding: calc(var(--header-height) + 2.5rem) 0 3rem;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 9rem;
+      background: linear-gradient(180deg, transparent, var(--paper));
+      z-index: -1;
+    }
+    .hero-content { position: relative; z-index: 1; }
+
+    .eyebrow,
+    .section-kicker,
+    .project-topline,
+    .timeline-date {
+      margin: 0 0 0.75rem;
+      color: var(--orange);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero-title-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-profile-pic {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.92);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: 4.5rem;
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .hero-quote {
+      max-width: 680px;
+      margin: 1rem 0 0;
+      color: rgba(255,255,255,0.95);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-left: 4px solid rgba(255,255,255,0.72);
+      padding-left: 1rem;
+    }
+
+    .hero-lead {
+      max-width: 680px;
+      margin: 1.25rem 0 0;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.2rem;
+      overflow-wrap: normal;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 2rem 0 0;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 46px;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      font-weight: 800;
+      line-height: 1.1;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary {
+      background: var(--orange);
+      color: #141414;
+      box-shadow: 0 14px 32px rgba(238,124,34,0.28);
+    }
+    .button-secondary {
+      border: 1px solid rgba(255,255,255,0.46);
+      background: rgba(255,255,255,0.11);
+      color: #fff;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 760px;
+      margin: 3rem 0 0;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 8px;
+      list-style: none;
+      background: rgba(255,255,255,0.16);
+      backdrop-filter: blur(14px);
+    }
+    .hero-metrics li {
+      min-height: 112px;
+      padding: 1rem;
+      background: rgba(10,16,19,0.32);
+    }
+    .hero-metrics strong {
+      display: block;
+      font-size: 1.45rem;
+      line-height: 1.2;
+    }
+    .hero-metrics span {
+      display: block;
+      margin-top: 0.3rem;
+      color: rgba(255,255,255,0.76);
+    }
+
+    section {
+      scroll-margin-top: calc(var(--header-height) + 1.5rem);
+      padding: 5rem 0;
+    }
+
+    /* ── INTRO ── */
+    .intro-section { padding-top: 4rem; }
+
+    .band { background: var(--surface); }
+
+    .intro-grid,
+    .contact-layout,
+    .timeline-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    h2, h3, p { overflow-wrap: break-word; }
+
+    h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 2.3rem;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .intro-copy p,
+    .section-heading p,
+    .timeline-item p,
+    .project-body p,
+    .skill-card p,
+    .contact-copy p { color: var(--muted); }
+
+    .intro-copy p:first-child { margin-top: 0; }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+    .section-heading p { margin: 0.8rem 0 0; }
+
+    /* ── FILTER ── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .filter-button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+    .filter-button.is-active {
+      border-color: var(--orange);
+      background: color-mix(in srgb, var(--orange) 14%, var(--surface));
+      color: var(--orange);
+    }
+    .filter-button:hover {
+      border-color: color-mix(in srgb, var(--orange) 65%, var(--line));
+      background: color-mix(in srgb, var(--orange) 18%, var(--surface));
+    }
+
+    /* ── GRIDS ── */
+    .skills-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card,
+    .project-card,
+    .contact-form,
+    .timeline-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card {
+      min-height: 220px;
+      padding: 1.25rem;
+      transition: transform 160ms ease, opacity 160ms ease;
+    }
+    .skill-card.is-hidden { display: none; }
+    .skill-card:hover,
+    .project-card:hover { transform: translateY(-4px); }
+
+    .skill-card svg {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 1.1rem;
+      color: var(--steel);
+    }
+    .skill-card h3 { margin-bottom: 0.65rem; }
+    .skill-card p,
+    .project-body p,
+    .timeline-item p { margin: 0.65rem 0 0; }
+
+    /* ── PROJECT CARDS ── */
+    .project-card {
+      overflow: hidden;
+      transition: transform 160ms ease;
+    }
+    .project-card img,
+    .project-video {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: var(--surface-strong);
+      display: block;
+    }
+
+    .project-carousel-wrap { position: relative; }
+
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.92);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      z-index: 2;
+      transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+    .carousel-control:hover {
+      background: rgba(255,255,255,1);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+    }
+    .carousel-control:focus-visible {
+      outline: 2px solid var(--orange);
+      outline-offset: 2px;
+    }
+    .carousel-prev { left: 0.75rem; }
+    .carousel-next { right: 0.75rem; }
+
+    .project-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(18rem, 1fr);
+      gap: 1rem;
+      overflow-x: auto;
+      padding: 1rem 0 0;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+    .project-carousel::-webkit-scrollbar { height: 10px; }
+    .project-carousel::-webkit-scrollbar-thumb {
+      background: rgba(39,86,107,0.32);
+      border-radius: 999px;
+    }
+
+    .project-card.project-carousel-card { overflow: visible; }
+
+    .carousel-slide {
+      scroll-snap-align: start;
+      min-width: 18rem;
+      aspect-ratio: 16 / 10;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--surface-strong);
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+      transition: transform 180ms ease;
+    }
+    .carousel-slide img:hover { transform: scale(1.02); }
+
+    .project-card.project-carousel-card .project-body { padding: 1.1rem; }
+    .project-card.project-carousel-card .project-topline { margin-top: 1rem; }
+
+    .project-body { padding: 1.1rem; }
+
+    .project-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.55rem;
+    }
+    .project-topline svg { color: var(--steel); }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    .tag-list span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--green) 13%, var(--surface-strong));
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 1rem;
+    }
+    .timeline-item {
+      position: relative;
+      padding: 1.25rem;
+    }
+    .timeline-date {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      margin-bottom: 0.6rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--blue) 14%, var(--surface));
+      color: var(--blue);
+    }
+
+    /* ── CONTACT ── */
+    .contact-copy {
+      position: sticky;
+      top: calc(var(--header-height) + 1.5rem);
+    }
+    .contact-links {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .contact-links a {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      min-height: 44px;
+      color: var(--steel-deep);
+      font-weight: 800;
+    }
+    .contact-links svg,
+    .contact-links i {
+      display: inline-flex;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--orange);
+      stroke: currentColor;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+      padding: 1.25rem;
+    }
+    .contact-form label {
+      display: grid;
+      gap: 0.4rem;
+      color: var(--ink);
+      font-weight: 800;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 0.85rem 0.9rem;
+      outline: none;
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--orange) 18%, transparent);
+    }
+    .form-status {
+      min-height: 24px;
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .form-status.is-error { color: var(--red); }
+    .form-status.is-success { color: var(--green); }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.88);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease;
+    }
+    .lightbox[aria-hidden="false"] {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+    }
+    .lightbox-image {
+      position: relative;
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.16);
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.28); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      padding: 1.5rem 0;
+      background: var(--steel-deep);
+      color: #fff;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .footer-inner p { margin: 0; }
+    .footer-name {
+      font-weight: 800;
+      text-transform: lowercase;
+    }
+    .data-processing {
+      margin: 0.25rem 0 0;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.85);
+    }
+    .footer-inner a {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    .back-to-top {
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .site-header { padding: 0 1rem; }
+
+      .nav-toggle {
+        display: inline-grid;
+        background: rgba(10,16,19,0.68);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.34);
+      }
+
+      .site-nav {
+        position: fixed;
+        inset: var(--header-height) 0 auto 0;
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-left: 0;
+        padding: 0.75rem 1rem 1rem;
+        background: var(--surface);
+        color: var(--ink);
+        border-bottom: 1px solid var(--line);
+      }
+      .header-actions { margin-left: auto; }
+      .site-nav.is-open { display: grid; }
+      .site-nav a {
+        border-radius: 8px;
+        padding: 0.85rem 0.75rem;
+      }
+
+      .hero h1 { font-size: 3.3rem; }
+
+      .skills-grid,
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .intro-grid,
+      .contact-layout,
+      .timeline-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .contact-copy { position: static; }
+    }
+
+    @media (max-width: 640px) {
+      [data-theme-toggle] { display: none; }
+
+      .header-actions {
+        position: static;
+        margin-left: 0;
+      }
+
+      .nav-toggle {
+        display: inline-grid;
+        position: fixed;
+        top: 15px;
+        left: 68px;
+        z-index: 90;
+      }
+
+      .brand-name { display: none; }
+
+      .eyebrow,
+      .hero h1,
+      .hero-lead,
+      .hero-actions,
+      .hero-metrics { max-width: calc(100vw - 2rem); }
+
+      .eyebrow { line-height: 1.35; }
+
+      .hero {
+        min-height: 84svh;
+        padding-bottom: 2rem;
+      }
+      .hero h1 { font-size: 2.55rem; }
+      .hero-lead {
+        font-size: 1rem;
+        max-width: 19.5rem;
+      }
+
+      .hero-metrics {
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+      }
+      .hero-metrics li { min-height: auto; }
+
+      section { padding: 3.5rem 0; }
+      h2 { font-size: 1.9rem; }
+
+      .skills-grid,
+      .projects-grid { grid-template-columns: 1fr; }
+
+      .filter-button { flex: 1 1 auto; }
+
+      .footer-inner { align-items: flex-start; }
+
+      .back-to-top { right: 0.75rem; width: 36px; height: 36px; }
+
+      .hero-profile-pic { width: 100px; height: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#profilo">Vai al contenuto</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#profilo" aria-label="Torna all'inizio">
+      <span class="brand-mark">RN</span>
+      <span class="brand-name">Rocco Nuzzi</span>
+    </a>
+
+    <nav id="site-nav" class="site-nav" data-nav aria-label="Navigazione principale">
+      <a href="#profilo">Profilo</a>
+      <a href="#competenze">Competenze</a>
+      <a href="#progetti">Progetti</a>
+      <a href="#percorso">Percorso</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Cambia tema" title="Cambia tema">
+        <i data-lucide="sun"></i>
+      </button>
+      <button class="icon-button nav-toggle" type="button" data-nav-toggle aria-label="Apri menu" aria-expanded="false" aria-controls="site-nav">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <main role="main">
+    <!-- HERO -->
+    <section class="hero" id="profilo" aria-labelledby="hero-heading">
+      <div class="section-shell hero-content">
+        <p class="eyebrow">Studente ITS | Tecnico Avanzato Automazione e sistemi industriali</p>
+        <div class="hero-title-wrapper">
+          <div>
+            <h1 id="hero-heading">Rocco Nuzzi</h1>
+            <p class="hero-quote">"LE AVVERSITÀ POSSONO ESSERE DELLE FORMIDABILI OCCASIONI"</p>
+          </div>
+          <img src="https://github.com/rocco88nuzzi/prova/blob/main/foto-profilo.png?raw=true" alt="Rocco Nuzzi" class="hero-profile-pic" loading="lazy" decoding="async"
+            srcset="https://github.com/rocco88nuzzi/prova/blob/main/foto-profilo.png?raw=true 400w, https://github.com/rocco88nuzzi/prova/blob/main/foto-profilo.png?raw=true 800w, https://github.com/rocco88nuzzi/prova/blob/main/foto-profilo.png?raw=true 1200w"
+            sizes="(max-width: 600px) 100px, (max-width: 900px) 200px, 240px"
+            width="240" height="240">
+        </div>
+        <p class="hero-lead">
+          Fin da bambino ero attratto da tutto ciò che funzionava grazie alla tecnica e all'ingegno, chiedendomi cosa ci fosse dietro ogni dispositivo di uso quotidiano. Passavo il tempo a costruire piccoli robot con le costruzioni, a smontare dispositivi e osservare con attenzione ogni meccanismo per comprenderne la logica. Quella che inizialmente era una semplice curiosità si è trasformata negli anni in una passione autentica per la tecnologia e l'innovazione. La voglia di imparare e di affrontare nuove sfide mi ha portato a sviluppare competenze sempre più specialistiche nel settore industriale. Per consolidare il mio percorso professionale ho scelto di frequentare l'ITS A. Cuccovillo di Bari, dove ho appreso nuovi strumenti per operare come Tecnico Superiore per Sistemi Automatici Industriali. Oggi continuo a investire nella mia crescita professionale con lo stesso entusiasmo che mi spingeva da bambino, trasformare la curiosità in conoscenza e la conoscenza in soluzioni.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#progetti">
+            <span>Vedi progetti</span>
+            <i data-lucide="arrow-down-right"></i>
+          </a>
+          <a class="button button-secondary" href="#contatti">
+            <span>Contattami</span>
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+
+        <ul class="hero-metrics" aria-label="Punti chiave del profilo">
+          <li>
+            <strong>ITS</strong>
+            <span>Pianificazione progetti, metodologie industriali e gestione qualità</span>
+          </li>
+          <li>
+            <strong>PLC</strong>
+            <span>Programmazione ladder, I/O industriale e diagnostica di sistema</span>
+          </li>
+          <li>
+            <strong>4.0</strong>
+            <span>Reti industriali, sensori connessi e digitalizzazione dei processi</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro-section">
+      <div class="section-shell intro-grid">
+        <div>
+          <p class="section-kicker">Profilo tecnico</p>
+          <h2>Un portfolio essenziale, orientato al mondo industriale.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            Mi interessano gli impianti automatici, la lettura degli schemi elettrici, il controllo tramite PLC e il miglioramento continuo dei processi produttivi.
+          </p>
+          <p>
+            Il mio obiettivo è lavorare su sistemi affidabili, sicuri e misurabili, unendo competenze pratiche di laboratorio a metodo, documentazione e attenzione alla sicurezza.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENZE -->
+    <section class="band" id="competenze">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="section-kicker">Competenze</p>
+          <h2>Area tecnica in crescita</h2>
+          <p>Filtra le competenze in base agli ambiti.</p>
+        </div>
+
+        <div class="filter-bar" aria-label="Filtra competenze">
+          <button class="filter-button is-active" type="button" data-filter="all">Tutte</button>
+          <button class="filter-button" type="button" data-filter="automation">Automazione</button>
+          <button class="filter-button" type="button" data-filter="maintenance">Manutenzione</button>
+          <button class="filter-button" type="button" data-filter="design">Progettazione</button>
+          <button class="filter-button" type="button" data-filter="digital">Industria 4.0</button>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card" data-category="automation">
+            <i data-lucide="cpu"></i>
+            <h3>PLC e logica di controllo</h3>
+            <p>Programmazione di base, gestione segnali I/O, cicli automatici, allarmi e simulazioni didattiche.</p>
+          </article>
+          <article class="skill-card" data-category="automation">
+            <i data-lucide="scan-line"></i>
+            <h3>Sensoristica industriale</h3>
+            <p>Finecorsa, sensori di prossimità, fotocellule, trasduttori e lettura dei segnali di campo.</p>
+          </article>
+          <article class="skill-card" data-category="maintenance">
+            <i data-lucide="wrench"></i>
+            <h3>Diagnostica guasti</h3>
+            <p>Analisi dei sintomi, verifica collegamenti, consultazione schemi e metodo di intervento ordinato.</p>
+          </article>
+          <article class="skill-card" data-category="design">
+            <i data-lucide="drafting-compass"></i>
+            <h3>Schemi e documentazione</h3>
+            <p>Lettura schemi elettrici, distinte componenti, layout quadro e documentazione tecnica essenziale.</p>
+          </article>
+          <article class="skill-card" data-category="digital">
+            <i data-lucide="network"></i>
+            <h3>Reti e dati macchina</h3>
+            <p>Concetti base di comunicazione industriale, monitoraggio dati, tracciabilità e manutenzione predittiva.</p>
+          </article>
+          <article class="skill-card" data-category="maintenance">
+            <i data-lucide="shield-check"></i>
+            <h3>Sicurezza macchina</h3>
+            <p>Procedure, dispositivi di emergenza, rischi elettrici e comportamento corretto in ambiente produttivo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGETTI -->
+    <section id="progetti">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="section-kicker">Progetti</p>
+          <h2>Esercitazioni e Laboratori ITS</h2>
+          <p>Video dalle esercitazioni pratiche: dalla progettazione CAD al controllo PLC, dalla robotica industriale al progetto multidisciplinare.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <video src="https://avwxefuvhdfmirwyuclt.supabase.co/storage/v1/object/sign/rocco88nuzzi/creo-parametric.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zNWMxNmU5Ni05MTllLTQ0OTgtYjY1OS1mMjYyMDViNDdlMmQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyb2Njbzg4bnV6emkvY3Jlby1wYXJhbWV0cmljLm1vdiIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODIyMDUxMTgsImV4cCI6MTkzOTg4NTExOH0.pzGb_1bbGHA-CyZh59K-UkTHZ_BkBwnpGjN_Lx8xIuI" class="project-video" controls preload="metadata" playsinline></video>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Progettazione CAD</span>
+                <i data-lucide="drafting-compass"></i>
+              </div>
+              <h3>Creo Parametric</h3>
+              <p>Modellazione 3D parametrica, disegno di componenti meccanici e assemblaggi per la progettazione industriale.</p>
+              <div class="tag-list">
+                <span>CAD</span>
+                <span>Modellazione 3D</span>
+                <span>Progettazione</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <video src="https://avwxefuvhdfmirwyuclt.supabase.co/storage/v1/object/sign/rocco88nuzzi/plc-snaptrainer.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zNWMxNmU5Ni05MTllLTQ0OTgtYjY1OS1mMjYyMDViNDdlMmQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyb2Njbzg4bnV6emkvcGxjLXNuYXB0cmFpbmVyLm1vdiIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODIyMDUxNTUsImV4cCI6MTkzOTg4NTE1NX0.MbLDkEvCWj5xH7WvsyG31oqZU0RWgf0wfVl2cu7UF-o" class="project-video" controls preload="metadata" playsinline></video>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Automazione Industriale</span>
+                <i data-lucide="cpu"></i>
+              </div>
+              <h3>PLC e Snaptrainer</h3>
+              <p>Programmazione PLC, gestione ingressi/uscite, simulazione di cicli automatici e diagnostica dei segnali di controllo.</p>
+              <div class="tag-list">
+                <span>PLC</span>
+                <span>I/O</span>
+                <span>Automazione</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <video src="https://avwxefuvhdfmirwyuclt.supabase.co/storage/v1/object/sign/rocco88nuzzi/rt-toolbox-robot.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zNWMxNmU5Ni05MTllLTQ0OTgtYjY1OS1mMjYyMDViNDdlMmQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyb2Njbzg4bnV6emkvcnQtdG9vbGJveC1yb2JvdC5tb3YiLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzgyMjA1MDI4LCJleHAiOjE5Mzk4ODUwMjh9.N7780OCavywURmuJoFXnoQLf2rNTHBI0_KAVAXr1p-c" class="project-video" controls preload="metadata" playsinline></video>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Robotica Industriale</span>
+                <i data-lucide="zap"></i>
+              </div>
+              <h3>RT Toolbox 3 - Robot Melfa RV-2FRB</h3>
+              <p>Programmazione e controllo di robot industriali, movimenti coordinati, sincronizzazione e comunicazione.</p>
+              <div class="tag-list">
+                <span>Robotica</span>
+                <span>RT Toolbox 3</span>
+                <span>Movimentazione</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <video src="https://avwxefuvhdfmirwyuclt.supabase.co/storage/v1/object/sign/rocco88nuzzi/stem-racing.mov?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8zNWMxNmU5Ni05MTllLTQ0OTgtYjY1OS1mMjYyMDViNDdlMmQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJyb2Njbzg4bnV6emkvc3RlbS1yYWNpbmcubW92Iiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4MjIwNTMzNCwiZXhwIjoxOTM5ODg1MzM0fQ.WA3Gk50nRQNwFIvkv7VUQrArpHOTtO1Tvhtqxw1o3Ro" class="project-video" controls preload="metadata" playsinline></video>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Progetto Multidisciplinare</span>
+                <i data-lucide="rocket"></i>
+              </div>
+              <h3>STEM Racing</h3>
+              <p>Progetto integrato di ingegneria: elettronica, programmazione, meccanica e test di performance su pista.</p>
+              <div class="tag-list">
+                <span>STEM</span>
+                <span>Elettronica</span>
+                <span>Performance</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carousel AutoCAD -->
+          <article class="project-card project-carousel-card">
+            <div class="project-carousel-wrap">
+              <button type="button" class="carousel-control carousel-prev" aria-label="Scorri indietro">
+                <i data-lucide="chevron-left"></i>
+              </button>
+              <div class="project-carousel" aria-label="Galleria Autocad">
+                <div class="carousel-slide">
+                  <img src="https://github.com/rocco88nuzzi/prova/blob/main/autocad-0954.jpeg?raw=true" alt="Schermata Autocad con progetto meccanico" loading="lazy" decoding="async"
+                    srcset="https://github.com/rocco88nuzzi/prova/blob/main/autocad-0954.jpeg?raw=true 400w, https://github.com/rocco88nuzzi/prova/blob/main/autocad-0954.jpeg?raw=true 800w" sizes="(max-width:600px) 100vw, 33vw" width="800" height="500">
+                </div>
+                <div class="carousel-slide">
+                  <img src="https://github.com/rocco88nuzzi/prova/blob/main/autocad-0968.jpeg?raw=true" alt="Progetto Autocad con layered document" loading="lazy" decoding="async"
+                    srcset="https://github.com/rocco88nuzzi/prova/blob/main/autocad-0968.jpeg?raw=true 400w, https://github.com/rocco88nuzzi/prova/blob/main/autocad-0968.jpeg?raw=true 800w" sizes="(max-width:600px) 100vw, 33vw" width="800" height="500">
+                </div>
+                <div class="carousel-slide">
+                  <img src="https://github.com/rocco88nuzzi/prova/blob/main/autocad-0975.jpeg?raw=true" alt="Dettaglio progetto Autocad con quote" loading="lazy" decoding="async"
+                    srcset="https://github.com/rocco88nuzzi/prova/blob/main/autocad-0975.jpeg?raw=true 400w, https://github.com/rocco88nuzzi/prova/blob/main/autocad-0975.jpeg?raw=true 800w" sizes="(max-width:600px) 100vw, 33vw" width="800" height="500">
+                </div>
+                <div class="carousel-slide">
+                  <img src="https://github.com/rocco88nuzzi/prova/blob/main/autocad-0976.jpeg?raw=true" alt="Schermata CAD con particolari costruttivi" loading="lazy" decoding="async"
+                    srcset="https://github.com/rocco88nuzzi/prova/blob/main/autocad-0976.jpeg?raw=true 400w, https://github.com/rocco88nuzzi/prova/blob/main/autocad-0976.jpeg?raw=true 800w" sizes="(max-width:600px) 100vw, 33vw" width="800" height="500">
+                </div>
+                <div class="carousel-slide">
+                  <img src="https://github.com/rocco88nuzzi/prova/blob/main/autocad-0977.jpeg?raw=true" alt="Dettaglio Autocad con simboli tecnici" loading="lazy" decoding="async"
+                    srcset="https://github.com/rocco88nuzzi/prova/blob/main/autocad-0977.jpeg?raw=true 400w, https://github.com/rocco88nuzzi/prova/blob/main/autocad-0977.jpeg?raw=true 800w" sizes="(max-width:600px) 100vw, 33vw" width="800" height="500">
+                </div>
+              </div>
+              <button type="button" class="carousel-control carousel-next" aria-label="Scorri avanti">
+                <i data-lucide="chevron-right"></i>
+              </button>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Autocad</span>
+                <i data-lucide="monitor"></i>
+              </div>
+              <h3>Galleria Autocad</h3>
+              <p>Scorri le immagini del progetto CAD con dettagli tecnici, layer e quote in un unico riquadro sfogliabile.</p>
+              <div class="tag-list">
+                <span>CAD</span>
+                <span>AutoCAD</span>
+                <span>Disegno</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carousel Programmazione C -->
+          <article class="project-card project-carousel-card">
+            <div class="project-carousel-wrap">
+              <button type="button" class="carousel-control carousel-prev" aria-label="Scorri indietro">
+                <i data-lucide="chevron-left"></i>
+              </button>
+              <div class="project-carousel" aria-label="Galleria Programmazione in C">
+                <div class="carousel-slide">
+                  <img src="https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2267.jpeg?raw=true" alt="Editor C con codice sorgente" loading="lazy" decoding="async"
+                    srcset="https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2267.jpeg?raw=true 400w, https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2267.jpeg?raw=true 800w" sizes="(max-width:600px) 100vw, 33vw" width="800" height="500">
+                </div>
+                <div class="carousel-slide">
+                  <img src="https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2268.jpeg?raw=true" alt="Editor C con flusso di controllo" loading="lazy" decoding="async"
+                    srcset="https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2268.jpeg?raw=true 400w, https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2268.jpeg?raw=true 800w" sizes="(max-width:600px) 100vw, 33vw" width="800" height="500">
+                </div>
+                <div class="carousel-slide">
+                  <img src="https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2269.jpeg?raw=true" alt="Editor C con struttura dati" loading="lazy" decoding="async"
+                    srcset="https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2269.jpeg?raw=true 400w, https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2269.jpeg?raw=true 800w" sizes="(max-width:600px) 100vw, 33vw" width="800" height="500">
+                </div>
+                <div class="carousel-slide">
+                  <img src="https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2270.jpeg?raw=true" alt="Editor C con algoritmi di controllo" loading="lazy" decoding="async"
+                    srcset="https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2270.jpeg?raw=true 400w, https://github.com/rocco88nuzzi/prova/blob/main/programmazione-c-2270.jpeg?raw=true 800w" sizes="(max-width:600px) 100vw, 33vw" width="800" height="500">
+                </div>
+              </div>
+              <button type="button" class="carousel-control carousel-next" aria-label="Scorri avanti">
+                <i data-lucide="chevron-right"></i>
+              </button>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Programmazione</span>
+                <i data-lucide="code"></i>
+              </div>
+              <h3>Galleria Programmazione in C</h3>
+              <p>Scorri le immagini di codice C, strutture dati e logiche di controllo in un'area compatta e intuitiva.</p>
+              <div class="tag-list">
+                <span>C</span>
+                <span>Codice</span>
+                <span>Software</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERCORSO -->
+    <section class="band" id="percorso">
+      <div class="section-shell timeline-layout">
+        <div class="section-heading">
+          <p class="section-kicker">Percorso</p>
+          <h2>Formazione e obiettivi</h2>
+          <p>Una linea temporale semplice per raccontare crescita, stage e competenze acquisite.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-date">Ora</span>
+            <h3>Percorso ITS</h3>
+            <p>Studio di programmazione dei dispositivi meccatronici, linguaggi di programmazione, PLC, robot, sensoristica, dall'IoT all'additive manufacturing, dai big data alla cyber security.</p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">Stage</span>
+            <h3>Esperienza in azienda</h3>
+            <p>Da personalizzare con reparto, mansioni, strumenti usati e risultati concreti ottenuti durante il tirocinio.</p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">Obiettivo</span>
+            <h3>Tecnico avanzato di sistemi industriali</h3>
+            <p>Crescere ogni giorno attraverso la tecnologia, trasformando conoscenze e idee in progetti concreti.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section id="contatti">
+      <div class="section-shell contact-layout">
+        <div class="contact-copy">
+          <p class="section-kicker">Contatti</p>
+          <h2>Pronto per stage, project work e collaborazioni tecniche.</h2>
+          <div class="contact-links">
+            <a href="mailto:rocco.88@hotmail.it">
+              <i data-lucide="mail"></i>
+              rocco.88@hotmail.it
+            </a>
+            <a href="tel:+393206054574">
+              <i data-lucide="smartphone"></i>
+              320 605 4574
+            </a>
+            <a href="Curriculum-2026.pdf" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="file-text"></i>
+              Curriculum 2026
+            </a>
+            <a href="https://www.linkedin.com/in/rocco-nuzzi" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.05-8.826 0-9.749h3.554v1.381c.43-.664 1.199-1.608 2.925-1.608 2.137 0 3.74 1.398 3.74 4.406v5.57zM5.337 8.855c-1.144 0-1.915-.758-1.915-1.706 0-.968.779-1.708 1.959-1.708 1.18 0 1.914.74 1.939 1.708 0 .948-.759 1.706-1.983 1.706zm1.946 11.597H3.392V9.703h3.891v10.749zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.76-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.47-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" data-contact-form novalidate>
+          <label for="contact-name">Nome</label>
+          <input id="contact-name" type="text" name="name" placeholder="Mario Rossi" required>
+          <label for="contact-email">Email</label>
+          <input id="contact-email" type="email" name="email" placeholder="nome@azienda.it" required>
+          <label for="contact-message">Messaggio</label>
+          <textarea id="contact-message" name="message" rows="5" placeholder="Scrivi qui il messaggio" required></textarea>
+          <button class="button button-primary" type="submit">
+            <span>Prepara email</span>
+            <i data-lucide="send"></i>
+          </button>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" data-lightbox hidden aria-hidden="true">
+    <div class="lightbox-backdrop" data-lightbox-backdrop></div>
+    <button type="button" class="lightbox-close" data-lightbox-close aria-label="Chiudi immagine">×</button>
+    <img class="lightbox-image" data-lightbox-image alt="Immagine progetto ingrandita">
+  </div>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner">
+      <div>
+        <p class="footer-name">&copy; <span data-year></span> Nuzzi Rocco</p>
+        <p class="data-processing">Autorizzo il trattamento dei miei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.lgs. 196/2003 e s.m.i.</p>
+      </div>
+      <a href="#profilo" class="back-to-top" style="position:static;transform:none;" aria-label="Torna su">
+        <i data-lucide="arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const header = document.querySelector("[data-header]");
+    const nav = document.querySelector("[data-nav]");
+    const navToggle = document.querySelector("[data-nav-toggle]");
+    const themeToggle = document.querySelector("[data-theme-toggle]");
+    const filterButtons = document.querySelectorAll("[data-filter]");
+    const skillCards = document.querySelectorAll(".skill-card");
+    const contactForm = document.querySelector("[data-contact-form]");
+    const formStatus = document.querySelector("[data-form-status]");
+    const yearTarget = document.querySelector("[data-year]");
+    const mailLink = document.querySelector('a[href^="mailto:"]');
+
+    function refreshIcons() {
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function setTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      localStorage.setItem("portfolio-theme", theme);
+      if (themeToggle) {
+        themeToggle.innerHTML = `<i data-lucide="${theme === "dark" ? "moon" : "sun"}"></i>`;
+        refreshIcons();
+      }
+    }
+
+    function closeMenu() {
+      nav?.classList.remove("is-open");
+      body.classList.remove("nav-open");
+      navToggle?.setAttribute("aria-expanded", "false");
+    }
+
+    function updateHeader() {
+      header?.classList.toggle("is-scrolled", window.scrollY > 16);
+    }
+
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+    if (yearTarget) yearTarget.textContent = new Date().getFullYear();
+
+    window.addEventListener("load", refreshIcons);
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = nav?.classList.toggle("is-open");
+      body.classList.toggle("nav-open", Boolean(isOpen));
+      navToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+    });
+
+    nav?.addEventListener("click", (event) => {
+      if (event.target.matches("a")) closeMenu();
+    });
+
+    themeToggle?.addEventListener("click", () => {
+      const currentTheme = document.documentElement.dataset.theme;
+      setTheme(currentTheme === "dark" ? "light" : "dark");
+    });
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach((item) => item.classList.remove("is-active"));
+        button.classList.add("is-active");
+        skillCards.forEach((card) => {
+          const shouldShow = filter === "all" || card.dataset.category === filter;
+          card.classList.toggle("is-hidden", !shouldShow);
+        });
+      });
+    });
+
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".site-nav a");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: "-38% 0px -55% 0px", threshold: 0 });
+
+    sections.forEach((section) => observer.observe(section));
+
+    contactForm?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(contactForm);
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const message = String(formData.get("message") || "").trim();
+      formStatus.className = "form-status";
+
+      if (!name || !email || !message) {
+        formStatus.textContent = "Compila tutti i campi prima di preparare l'email.";
+        formStatus.classList.add("is-error");
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        formStatus.textContent = "Inserisci un indirizzo email valido.";
+        formStatus.classList.add("is-error");
+        return;
+      }
+
+      const mailDestination = mailLink?.getAttribute("href")?.replace("mailto:", "").trim() || "";
+      const subject = encodeURIComponent(`Portfolio - contatto da ${name}`);
+      const bodyText = encodeURIComponent(`${message}\n\nDa: ${name}\nEmail: ${email}`);
+      window.location.href = `mailto:${mailDestination}?subject=${subject}&body=${bodyText}`;
+      formStatus.textContent = "Email pronta nel tuo client di posta.";
+      formStatus.classList.add("is-success");
+    });
+
+    // Lightbox
+    const lightbox = document.querySelector("[data-lightbox]");
+    const lightboxImage = document.querySelector("[data-lightbox-image]");
+    const lightboxClose = document.querySelector("[data-lightbox-close]");
+    const lightboxBackdrop = document.querySelector("[data-lightbox-backdrop]");
+
+    function openLightbox(src, alt) {
+      if (!lightbox || !lightboxImage) return;
+      lightboxImage.src = src;
+      lightboxImage.alt = alt || "Immagine progetto ingrandita";
+      lightbox.hidden = false;
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      if (!lightbox || !lightboxImage) return;
+      lightbox.hidden = true;
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (target instanceof HTMLImageElement && target.closest(".project-carousel") && target.closest(".project-card.project-carousel-card")) {
+        const projectCard = target.closest(".project-card.project-carousel-card");
+        if (projectCard) {
+          const label = projectCard.querySelector(".project-topline span");
+          const projectName = label ? label.textContent?.trim().toLowerCase() : "";
+          if (projectName.includes("autocad") || projectName.includes("programmazione") || projectName.includes("c")) {
+            event.preventDefault();
+            openLightbox(target.src, target.alt);
+          }
+        }
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const clicked = event.target;
+      const control = clicked instanceof Element ? clicked.closest(".carousel-control") : null;
+      if (!control) return;
+      const carousel = control.closest(".project-carousel-wrap")?.querySelector(".project-carousel");
+      if (!carousel) return;
+      const scrollAmount = Math.max(carousel.clientWidth * 0.8, 320);
+      const direction = control.classList.contains("carousel-next") ? 1 : -1;
+      carousel.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+    });
+
+    lightboxClose?.addEventListener("click", closeLightbox);
+    lightboxBackdrop?.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox && lightbox.getAttribute("aria-hidden") === "false") {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
